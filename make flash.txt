@@ -1,0 +1,80 @@
+> "make.exe" flash
+avrdude -c jtag1 -p m16 -P com3 -b 19200 -U flash:w:02_LED_blink.hex -v
+
+avrdude: Version 5.10, compiled on Jan 19 2010 at 10:45:23
+         Copyright (c) 2000-2005 Brian Dean, http://www.bdmicro.com/
+         Copyright (c) 2007-2009 Joerg Wunsch
+
+         System wide configuration file is "D:\WinAVR\bin\avrdude.conf"
+
+         Using Port                    : com3
+         Using Programmer              : jtag1
+         Overriding Baud Rate          : 19200
+         AVR Part                      : ATMEGA16
+         Chip Erase delay              : 9000 us
+         PAGEL                         : PD7
+         BS2                           : PA0
+         RESET disposition             : dedicated
+         RETRY pulse                   : SCK
+         serial program mode           : yes
+         parallel program mode         : yes
+         Timeout                       : 200
+         StabDelay                     : 100
+         CmdexeDelay                   : 25
+         SyncLoops                     : 32
+         ByteDelay                     : 0
+         PollIndex                     : 3
+         PollValue                     : 0x53
+         Memory Detail                 :
+
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           eeprom         4    10   128    0 no        512    4      0  9000  9000 0xff 0xff
+           flash         33     6   128    0 yes     16384  128    128  4500  4500 0xff 0xff
+           lock           0     0     0    0 no          1    0      0  9000  9000 0x00 0x00
+           lfuse          0     0     0    0 no          1    0      0  9000  9000 0x00 0x00
+           hfuse          0     0     0    0 no          1    0      0  9000  9000 0x00 0x00
+           signature      0     0     0    0 no          3    0      0     0     0 0x00 0x00
+           calibration    0     0     0    0 no          4    0      0     0     0 0x00 0x00
+
+         Programmer Type : JTAGMKI
+         Description     : Atmel JTAG ICE (mkI)
+         ICE hardware version: 0xcf
+         ICE firmware version: 0x7f
+         Vtarget         : 6.3 V
+         JTAG clock      : 1 MHz (1.0 us)
+
+avrdude: jtagmkI_initialize(): warning: OCDEN fuse not programmed, single-byte EEPROM updates not possible
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.03s
+
+avrdude: Device signature = 0x1e9403
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: jtagmkI_initialize(): warning: OCDEN fuse not programmed, single-byte EEPROM updates not possible
+avrdude: reading input file "02_LED_blink.hex"
+avrdude: input file 02_LED_blink.hex auto detected as Intel Hex
+avrdude: writing flash (156 bytes):
+
+Writing | ################################################## | 100% 0.19s
+
+avrdude: 156 bytes of flash written
+avrdude: verifying flash memory against 02_LED_blink.hex:
+avrdude: load data flash data from input file 02_LED_blink.hex:
+avrdude: input file 02_LED_blink.hex auto detected as Intel Hex
+avrdude: input file 02_LED_blink.hex contains 156 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 0.09s
+
+avrdude: verifying ...
+avrdude: 156 bytes of flash verified
+
+avrdude done.  Thank you.
+
+
+> Process Exit Code: 0
+> Time Taken: 00:05
